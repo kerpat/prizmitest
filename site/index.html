@@ -159,7 +159,14 @@
                         const countdownEl = document.getElementById('countdown');
 
                         const redirect = () => {
-                            const botUsername = window.APP_CONFIG?.BOT_USERNAME || 'gogobikebot';
+                            console.log('APP_CONFIG:', window.APP_CONFIG);
+                            const botUsername = window.APP_CONFIG?.BOT_USERNAME;
+                            console.log('Bot username:', botUsername);
+                            if (!botUsername) {
+                                console.error('BOT_USERNAME not found in config!');
+                                alert('Ошибка конфигурации: BOT_USERNAME не найден');
+                                return;
+                            }
                             const registrationLink = `https://t.me/${botUsername}?start=register`;
 
                             // Сначала отправляем команду на регистрацию...
@@ -208,7 +215,13 @@
                         if (countdown <= 0) {
                             clearInterval(interval);
                             const tg = window.Telegram.WebApp;
-                            const botUsername = window.APP_CONFIG?.BOT_USERNAME || 'gogobikebot';
+                            console.log('APP_CONFIG:', window.APP_CONFIG);
+                            const botUsername = window.APP_CONFIG?.BOT_USERNAME;
+                            console.log('Bot username:', botUsername);
+                            if (!botUsername) {
+                                console.error('BOT_USERNAME not found in config!');
+                                return;
+                            }
                             const registrationLink = `https://t.me/${botUsername}?start=register`;
 
                             // Сначала отправляем команду на регистрацию...
@@ -226,7 +239,13 @@
                     btn.addEventListener('click', () => {
                         clearInterval(interval);
                         const tg = window.Telegram.WebApp;
-                        const botUsername = window.APP_CONFIG?.BOT_USERNAME || 'gogobikebot';
+                        console.log('APP_CONFIG:', window.APP_CONFIG);
+                        const botUsername = window.APP_CONFIG?.BOT_USERNAME;
+                        console.log('Bot username:', botUsername);
+                        if (!botUsername) {
+                            console.error('BOT_USERNAME not found in config!');
+                            return;
+                        }
                         const registrationLink = `https://t.me/${botUsername}?start=register`;
 
                         // Сначала отправляем команду на регистрацию...
@@ -1233,7 +1252,14 @@
 
                 // 1. Формируем твою реферальную ссылку на БОТА, а не на сайт.
                 //    Пользователь должен запустить бота, чтобы зарегистрироваться.
-                const botUsername = window.APP_CONFIG?.BOT_USERNAME || 'gogobikebot';
+                console.log('APP_CONFIG:', window.APP_CONFIG);
+                const botUsername = window.APP_CONFIG?.BOT_USERNAME;
+                console.log('Bot username for referral:', botUsername);
+                if (!botUsername) {
+                    console.error('BOT_USERNAME not found in config!');
+                    document.getElementById('referral-link').value = 'Ошибка: BOT_USERNAME не настроен';
+                    return;
+                }
                 const userId = localStorage.getItem('userId'); // Берем ID текущего пользователя для рефералки
                 const referralLink = `https://t.me/${botUsername}?start=${userId}`;
 

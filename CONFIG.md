@@ -44,6 +44,8 @@ site/config.js
 | `CONTRACTS_API_URL` | string | ✅ Yes | URL of the PDF/contracts generation service (Render) | `https://gogobikedogovor.onrender.com` |
 | `BOT_USERNAME` | string | ✅ Yes | Telegram bot username (without @) | `gogobikebot` |
 | `SUPPORT_TELEGRAM` | string | ✅ Yes | Support channel/group username (without @) | `GoGoBike_support` |
+| `BOT_USERNAME` | string | ✅ Yes | Telegram bot username (without @) | `gogobikebot` |
+| `SUPPORT_TELEGRAM` | string | ✅ Yes | Support channel/group username (without @) | `GoGoBike_support` |
 
 ### Usage Example
 
@@ -93,6 +95,8 @@ Backend API functions use environment variables from the `.env` file.
 | `SUPABASE_URL` | string | ✅ Yes | Supabase project URL | All API functions |
 | `SUPABASE_SERVICE_ROLE_KEY` | string | ✅ Yes | Supabase service role key (server-side only, keep secret!) | All API functions |
 | `TELEGRAM_BOT_TOKEN` | string | ✅ Yes | Telegram bot token from @BotFather | `api/auth.js`, `api/notify.js` |
+| `BOT_USERNAME` | string | ✅ Yes | Telegram bot username (without @) | `api/auth.js` (future use) |
+| `SUPPORT_TELEGRAM` | string | ✅ Yes | Support channel/group username (without @) | Frontend links |
 | `GOOGLE_API_KEY` | string | ✅ Yes | Google API key for Vision API (OCR) | `api/gemini-ocr.js` |
 | `INTERNAL_SECRET` | string | ✅ Yes | Secret key for internal service authentication | `api/gemini-ocr.js` |
 | `API_GATEWAY_URL` | string | ✅ Yes | URL of the OCR processing service | `api/gemini-ocr.js` |
@@ -151,6 +155,8 @@ The Python Telegram bot (`bot.py`) uses environment variables from the `.env` fi
 | Parameter | Type | Required | Description | Usage |
 |-----------|------|----------|-------------|-------|
 | `TELEGRAM_BOT_TOKEN` | string | ✅ Yes | Telegram bot token from @BotFather | Bot authentication |
+| `BOT_USERNAME` | string | ✅ Yes | Telegram bot username (without @) | Bot configuration |
+| `SUPPORT_TELEGRAM` | string | ✅ Yes | Support channel/group username (without @) | Support links |
 | `SUPABASE_URL` | string | ✅ Yes | Supabase project URL | Database operations |
 | `SUPABASE_SERVICE_ROLE_KEY` | string | ✅ Yes | Supabase service role key | Database operations |
 | `GOOGLE_API_KEY` | string | ✅ Yes | Google API key for services | OCR processing |
