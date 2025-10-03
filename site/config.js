@@ -14,5 +14,9 @@ window.APP_CONFIG = {
   APP_BASE_URL: 'https://prizmitest-lvzh.vercel.app/',
 
   // URL for the separate server handling contracts (PDF generation)
-  CONTRACTS_API_URL: 'https://your-contracts-server.onrender.com'
+  CONTRACTS_API_URL: 'https://your-contracts-server.onrender.com',
+
+  // Telegram Bot Configuration
+  BOT_USERNAME: 'dasdsaads12321xczbot',
+  SUPPORT_TELEGRAM: 'GoGoBike_support'
 };

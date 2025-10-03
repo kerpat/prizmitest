@@ -42,6 +42,8 @@ site/config.js
 | `YANDEX_MAPS_API_KEY` | string | ✅ Yes | Yandex Maps JavaScript API key | `a32fae3e-06f9-4231-87a0-f225b5d7a04a` |
 | `APP_BASE_URL` | string | ✅ Yes | Base URL of the main application (Vercel deployment) | `https://go-go-b-ike.vercel.app` |
 | `CONTRACTS_API_URL` | string | ✅ Yes | URL of the PDF/contracts generation service (Render) | `https://gogobikedogovor.onrender.com` |
+| `BOT_USERNAME` | string | ✅ Yes | Telegram bot username (without @) | `gogobikebot` |
+| `SUPPORT_TELEGRAM` | string | ✅ Yes | Support channel/group username (without @) | `GoGoBike_support` |
 
 ### Usage Example
 

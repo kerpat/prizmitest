@@ -473,7 +473,7 @@
                         </svg>
                     </div>
                     <hr class="menu-divider">
-                    <a href="https://t.me/GoGoBike_support" target="_blank" class="menu-item">
+                    <a href="#" id="telegram-support-link" target="_blank" class="menu-item">
                         <div class="menu-item-left">
                             <svg class="menu-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -694,6 +694,12 @@
         const CONTRACTS_API_URL = window.APP_CONFIG.CONTRACTS_API_URL;
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Set Telegram support link from config
+            const supportLink = document.getElementById('telegram-support-link');
+            if (supportLink && window.APP_CONFIG.SUPPORT_TELEGRAM) {
+                supportLink.href = `https://t.me/${window.APP_CONFIG.SUPPORT_TELEGRAM}`;
+            }
+
             if (window.location.hash === '#support') {
                 setTimeout(() => {
                     openModal('support-modal');

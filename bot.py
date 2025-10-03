@@ -40,6 +40,10 @@ if not APP_BASE_URL:
     import sys
     sys.exit(1)
 
+# Bot configuration
+BOT_USERNAME = os.getenv('BOT_USERNAME', 'gogobikebot')  # Имя бота без @
+SUPPORT_TELEGRAM = os.getenv('SUPPORT_TELEGRAM', 'GoGoBike_support')  # Канал поддержки без @
+
 WEBAPP_REGISTER_API = f'{APP_BASE_URL}/api/telegram-register'
 BOT_REGISTER_API = f'{APP_BASE_URL}/api/auth'
 ADMIN_SECRET_KEY = 'your_super_secret_admin_key' # Секрет для уведомлений от админки
