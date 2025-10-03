@@ -1,22 +1,13 @@
 {
   "regions": ["iad1"],
-  "crons": [
-    {
-      "path": "/api/process-renewals",
-      "schedule": "0 3 * * *"
-    }
-  ],
   "functions": {
     "api/auth.js": {
-      "memory": 1024,
       "maxDuration": 45
     },
     "api/user.js": {
-      "memory": 1024,
       "maxDuration": 45
     },
     "api/**/*.js": {
-      "memory": 1024,
       "maxDuration": 30
     }
   },
