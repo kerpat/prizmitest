@@ -681,7 +681,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.41.0/dist/umd/supabase.min.js"></script>
     <script>
         if (!window.APP_CONFIG) {
-            console.error('ОШИБКА: config.js не загружен! Убедитесь, что <script src="config.js"></script> добавлен в HTML.');
+            console.error('ОШИБКА: config.js не загружен! Убедитесь, что <' + 'script src="config.js"><' + '/script> добавлен в HTML.');
             throw new Error('Configuration not loaded');
         }
         const SUPABASE_URL = window.APP_CONFIG.SUPABASE_URL;
@@ -1280,7 +1280,7 @@
                 let contentHTML = '';
                 if (message.file_url) {
                     if (message.file_type && message.file_type.startsWith('image/')) {
-                        contentHTML = `<img src="${message.file_url}" style="max-width: 100%; border-radius: 12px; cursor: pointer;" onclick="window.open('${message.file_url}', '_blank')">`;
+                        contentHTML = `<img src="${message.file_url}" style="max-width: 100%; border-radius: 12px; cursor: pointer;" onclick="window.open(\`${message.file_url}\`, '_blank')">`;
                     } else {
                         contentHTML = `<a href="${message.file_url}" target="_blank" style="color: inherit; text-decoration: underline;">Прикрепленный файл: ${message.message_text || 'файл'}</a>`;
                     }
