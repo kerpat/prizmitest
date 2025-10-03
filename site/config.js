@@ -11,7 +11,7 @@ window.APP_CONFIG = {
   YANDEX_MAPS_API_KEY: 'a32fae3e-06f9-4231-87a0-f225b5d7a04a',
 
   // Base URL of the main Vercel deployment, used for redirects
-  APP_BASE_URL: 'https://serverdogovor.onrender.com',
+  APP_BASE_URL: 'https://prizmitest-lvzh.vercel.app/',
 
   // URL for the separate server handling contracts (PDF generation)
   CONTRACTS_API_URL: 'https://your-contracts-server.onrender.com'
