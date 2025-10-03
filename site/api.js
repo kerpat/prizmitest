@@ -1,16 +1,5 @@
-// Check if APP_CONFIG is loaded
-if (!window.APP_CONFIG) {
-    console.error('ОШИБКА: config.js не загружен! Убедитесь, что <script src="config.js"></script> добавлен в HTML.');
-    throw new Error('Configuration not loaded');
-}
-
-const SUPABASE_URL = window.APP_CONFIG.SUPABASE_URL;
-const SUPABASE_ANON_KEY = window.APP_CONFIG.SUPABASE_ANON_KEY;
-
-if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    throw new Error('SUPABASE_URL или SUPABASE_ANON_KEY не настроены в config.js');
-}
-
+const SUPABASE_URL = 'https://avamqfmuhiwtlumjkzmv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2YW1xZm11aGl3dGx1bWprem12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2NjMyODcsImV4cCI6MjA3MjIzOTI4N30.EwEPM0pObAd3v_NXI89DLcgKVYrUiOn7iHuCXXaqU4I';
 export const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export async function getClient(userId) {

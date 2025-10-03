@@ -2,12 +2,6 @@ const { createClient } = require('@supabase/supabase-js');
 const fetch = require('node-fetch');
 const crypto = require('crypto');
 
-// Get APP_BASE_URL from environment with fallback for backward compatibility
-const APP_BASE_URL = process.env.APP_BASE_URL || 'https://go-go-b-ike.vercel.app';
-if (!process.env.APP_BASE_URL) {
-    console.warn('WARNING: APP_BASE_URL is not set in environment variables. Using fallback value.');
-}
-
 function normalizePhone(phone) {
     if (!phone) return '';
     let digits = phone.replace(/\D/g, '');
@@ -187,7 +181,7 @@ async function handleSaveCard({ userId }) {
         description,
         metadata: { userId, payment_type: 'save_card' }, // Special metadata
         save_payment_method: true,
-        confirmation: { type: 'redirect', return_url: `${APP_BASE_URL}/profile.html?card_saved=true` }, // Redirect back to profile
+        confirmation: { type: 'redirect', return_url: 'https://prizmitest-lvzh.vercel.app/profile.html?card_saved=true' }, // Redirect back to profile
         receipt: {
             customer: { phone: normalizedPhone },
             items: [{
@@ -242,7 +236,7 @@ async function handleCreatePayment(body) {
     // Determine payment type and calculate amounts
     if (type === 'renewal') {
         paymentType = 'renewal';
-        successRedirectUrl = `${APP_BASE_URL}/?renewal_success=true`;
+        successRedirectUrl = 'https://prizmitest-lvzh.vercel.app/?renewal_success=true';
         description = `Продление аренды`;
         const renewalCost = Number.parseFloat(amountFromClient);
 
@@ -256,12 +250,12 @@ async function handleCreatePayment(body) {
         }
     } else if (type === 'booking') {
         paymentType = 'booking';
-        successRedirectUrl = `${APP_BASE_URL}/?booking_success=true`;
+        successRedirectUrl = 'https://prizmitest-lvzh.vercel.app/?booking_success=true';
         description = `Бронирование велосипеда`;
         amount = Number.parseFloat(amountFromClient);
     } else if (tariffId && amountFromClient) {
         paymentType = 'rental';
-        successRedirectUrl = `${APP_BASE_URL}/?rental_success=true`;
+        successRedirectUrl = 'https://prizmitest-lvzh.vercel.app/?rental_success=true';
         const tariffCost = Number.parseFloat(amountFromClient);
         description = `Аренда велосипеда`;
 
@@ -275,7 +269,7 @@ async function handleCreatePayment(body) {
         }
     } else if (amountFromClient) {
         paymentType = 'top-up';
-        successRedirectUrl = `${APP_BASE_URL}/?topup_success=true`;
+        successRedirectUrl = 'https://prizmitest-lvzh.vercel.app/?topup_success=true';
         description = 'Пополнение баланса GoGoBike';
         amount = Number.parseFloat(amountFromClient);
     } else {

@@ -3186,7 +3186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Step 2: Generate return act PDF
-                const pdfServerUrl = window.APP_CONFIG.CONTRACTS_API_URL + '/api/user';
+                const pdfServerUrl = 'https://gogobikedogovor.onrender.com/api/user';
                 const pdfResponse = await fetch(pdfServerUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

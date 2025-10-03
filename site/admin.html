@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1280">
-  <script src="config.js?v=2"></script>
+  <script src="config.js"></script>
   <title>Админ‑панель | Bike App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,17 +67,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.41.0/dist/umd/supabase.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/@tiptap/starter-kit@2.0.0-beta.183/dist/index.global.js"></script>
-  <!-- Yandex Maps API - loaded dynamically -->
-  <script>
-    // Dynamically load Yandex Maps API with API key from config
-    if (!window.APP_CONFIG) {
-      console.error('ОШИБКА: config.js не загружен!');
-      throw new Error('Configuration not loaded');
-    }
-    const yandexMapsScript = document.createElement('script');
-    yandexMapsScript.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=${window.APP_CONFIG.YANDEX_MAPS_API_KEY}`;
-    document.head.appendChild(yandexMapsScript);
-  </script>
+  <!-- Yandex Maps API -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=a32fae3e-06f9-4231-87a0-f225b5d7a04a"></script>
   <script src="transitions.js" defer></script>
 </head>
 

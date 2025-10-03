@@ -57,7 +57,7 @@
 ### API endpoints
 - `POST /api/admin` с `action: 'charge-for-damages'` - списание средств за ущерб
 - `POST /api/admin` с `action: 'finalize-return'` - завершение приемки
-- `POST ${CONTRACTS_API_URL}/api/user` с `action: 'generate-return-act'` - генерация PDF акта (URL настраивается через переменную окружения `CONTRACTS_API_URL`)
+- `POST https://gogobikedogovor.onrender.com/api/user` с `action: 'generate-return-act'` - генерация PDF акта
 
 ### Визуальные элементы
 - Индикатор прогресса с 3 шагами

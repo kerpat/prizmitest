@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="config.js?v=2"></script>
     <title>Карта Инвестора - Bike App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="blend.css">
@@ -61,17 +60,7 @@
     </nav>
 </div>
 
-<script>
-    // Dynamically load Yandex Maps API with API key from config
-    if (!window.APP_CONFIG) {
-        console.error('ОШИБКА: config.js не загружен!');
-        throw new Error('Configuration not loaded');
-    }
-    const yandexMapsScript = document.createElement('script');
-    yandexMapsScript.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=${window.APP_CONFIG.YANDEX_MAPS_API_KEY}`;
-    yandexMapsScript.type = 'text/javascript';
-    document.head.appendChild(yandexMapsScript);
-</script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=a32fae3e-06f9-4231-87a0-f225b5d7a04a" type="text/javascript"></script>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
         // --- ПРОВЕРКА, ЧТО ЭТО ИНВЕСТОР ---

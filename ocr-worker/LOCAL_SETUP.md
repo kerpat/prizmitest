@@ -29,17 +29,17 @@ cp .env.example .env
 
 ```env
 # Supabase (используйте SERVICE_ROLE_KEY для записи)
-SUPABASE_URL=your_supabase_url
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+SUPABASE_URL=https://avamqfmuhiwtlumjkzmv.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=ваш_service_role_key_из_supabase
 
 # Telegram Bot
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+TELEGRAM_BOT_TOKEN=ваш_токен_бота
 
 # Google Gemini
-GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY=ваш_gemini_api_key
 
 # Секрет для защиты API
-INTERNAL_SECRET=your_internal_secret
+INTERNAL_SECRET=придумайте_сложный_секрет
 ```
 
 ### 4. Запуск сервера
@@ -98,7 +98,7 @@ ngrok http 3000
 
 В настройках вашего проекта на Vercel добавьте:
 ```
-API_GATEWAY_URL=https://abcd-1234.ngrok.io
+OCR_WORKER_URL=https://abcd-1234.ngrok.io
 INTERNAL_SECRET=тот_же_секрет_что_в_.env
 ```
 
@@ -145,7 +145,7 @@ curl -X POST http://localhost:3000/process-document \
 1. **Загрузите код на GitHub**
 2. **Создайте Web Service на Render**
 3. **Настройте переменные окружения на Render**
-4. **Обновите Vercel переменную `API_GATEWAY_URL`**
+4. **Обновите Vercel переменную `OCR_WORKER_URL`**
 
 ## 🐛 Возможные проблемы
 

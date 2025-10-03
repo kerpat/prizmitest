@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="config.js?v=2"></script>
     <title>Профиль - Bike App</title>
     <link rel="stylesheet" href="style.css?v=7.3">
     <link rel="stylesheet" href="blend.css">
@@ -473,7 +472,7 @@
                         </svg>
                     </div>
                     <hr class="menu-divider">
-                    <a href="#" id="telegram-support-link" target="_blank" class="menu-item">
+                    <a href="https://t.me/GoGoBike_support" target="_blank" class="menu-item">
                         <div class="menu-item-left">
                             <svg class="menu-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -680,26 +679,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.41.0/dist/umd/supabase.min.js"></script>
     <script>
-        if (!window.APP_CONFIG) {
-            console.error('ОШИБКА: config.js не загружен! Убедитесь, что <' + 'script src="config.js"><' + '/script> добавлен в HTML.');
-            throw new Error('Configuration not loaded');
-        }
-        const SUPABASE_URL = window.APP_CONFIG.SUPABASE_URL;
-        const SUPABASE_ANON_KEY = window.APP_CONFIG.SUPABASE_ANON_KEY;
+        const SUPABASE_URL = 'https://avamqfmuhiwtlumjkzmv.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2YW1xZm11aGl3dGx1bWprem12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2NjMyODcsImV4cCI6MjA3MjIzOTI4N30.EwEPM0pObAd3v_NXI89DLcgKVYrUiOn7iHuCXXaqU4I';
         // We no longer use a global API_BASE_URL for all requests,
         // since they go to different servers.
         // const API_BASE_URL = 'https://gogobikedogovor.onrender.com';
 
         // Define a constant specifically for contract requests
-        const CONTRACTS_API_URL = window.APP_CONFIG.CONTRACTS_API_URL;
+        const CONTRACTS_API_URL = 'https://gogobikedogovor.onrender.com';
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Set Telegram support link from config
-            const supportLink = document.getElementById('telegram-support-link');
-            if (supportLink && window.APP_CONFIG.SUPPORT_TELEGRAM) {
-                supportLink.href = `https://t.me/${window.APP_CONFIG.SUPPORT_TELEGRAM}`;
-            }
-
             if (window.location.hash === '#support') {
                 setTimeout(() => {
                     openModal('support-modal');
@@ -1286,7 +1275,7 @@
                 let contentHTML = '';
                 if (message.file_url) {
                     if (message.file_type && message.file_type.startsWith('image/')) {
-                        contentHTML = `<img src="${message.file_url}" style="max-width: 100%; border-radius: 12px; cursor: pointer;" onclick="window.open(\`${message.file_url}\`, '_blank')">`;
+                        contentHTML = `<img src="${message.file_url}" style="max-width: 100%; border-radius: 12px; cursor: pointer;" onclick="window.open('${message.file_url}', '_blank')">`;
                     } else {
                         contentHTML = `<a href="${message.file_url}" target="_blank" style="color: inherit; text-decoration: underline;">Прикрепленный файл: ${message.message_text || 'файл'}</a>`;
                     }

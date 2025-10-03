@@ -29,9 +29,8 @@
             state.supabase = options.supabaseClient;
         }
         if (!state.supabase && global.supabase && typeof global.supabase.createClient === 'function') {
-            // Use centralized configuration from window.APP_CONFIG
-            const url = global.APP_CONFIG?.SUPABASE_URL || global.localStorage?.getItem('supabaseUrl');
-            const anonKey = global.APP_CONFIG?.SUPABASE_ANON_KEY || global.localStorage?.getItem('supabaseAnonKey');
+            const url = global.SUPABASE_URL || global.localStorage?.getItem('supabaseUrl');
+            const anonKey = global.SUPABASE_ANON_KEY || global.localStorage?.getItem('supabaseAnonKey');
             if (url && anonKey) {
                 state.supabase = global.supabase.createClient(url, anonKey);
             }
