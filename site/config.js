@@ -1,6 +1,6 @@
 
-// Template for frontend configuration. 
-// Copy this to config.js and fill in your actual values for each deployment.
+// Frontend configuration v2
+// Updated: Added BOT_USERNAME and SUPPORT_TELEGRAM
 
 window.APP_CONFIG = {
   // Supabase
